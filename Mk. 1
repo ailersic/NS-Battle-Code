@@ -1,0 +1,550 @@
+def greet(lang):
+    if lang == "vi":
+        print "Good day to you!"
+    if lang == "ki":
+        print "Ungimua!"
+    if lang == "na":
+        print "Nihao!"
+
+greet("vi")
+
+# Linnasia Battle Program
+print "Linnasia Battle Program Mk. 1"
+
+Nation_One = "Vittauria"
+Adjective_One = "Vittaurian"
+arms_1 = 21163.25
+defence_1 = 6481.25
+compliance_1 = 63.16
+economy_1 = 100
+inftech_1 = 31453.88
+
+Nation_Two = "Nandiguo"
+Adjective_Two = "Nandiguese"
+arms_2 = 3905.39
+defence_2 = 2196.78
+compliance_2 = 64.81
+economy_2 = 64.25
+inftech_2 = 7550.43
+
+print "Nation 1: " + (Nation_One)
+if arms_1>=2000:
+    arms_1a=2
+    print "Arms Manufacture: Industrious"
+elif arms_1<=1000:
+    arms_1a=0
+    print "Arms Manufacture: Poor"
+else:
+    arms_1a=1
+    print "Arms Manufacture: Fair"
+if defence_1>=2000:
+    defence_1a=2
+    print "Defence Forces: Vigilant"
+elif defence_1<=1000:
+    defence_1a=0
+    print "Defence Forces: Lazy"
+else:
+    defence_1a=2
+    print "Defence Forces: Average"
+if compliance_1>=75:
+    compliance_1a=2
+    print "Compliance: Slavish"
+elif compliance_1<=65:
+    compliance_1a=0
+    print "Compliance: Rebellious"
+else:
+    compliance_1a=1
+    print "Compliance: Moderate"
+if economy_1>=66:
+    economy_1a=2
+    print "Economy: First World"
+elif economy_1<33:
+    economy_1a=0
+    print "Economy: Third World"
+else:
+    economy_1a=1
+    print "Economy: Second World"
+attack_3 = arms_1a + compliance_1a
+defence_3 = defence_1a + economy_1a
+print "Attack Value: " + str(attack_3)
+print "Defence Value: " +str(defence_3)
+
+print "Nation 2: " + (Nation_Two)
+if arms_2>=2000:
+    arms_2a=2
+    print "Arms Manufacture: Industrious"
+elif arms_2<=1000:
+    arms_2a=0
+    print "Arms Manufacture: Poor"
+else:
+    arms_2a=1
+    print "Arms Manufacture: Fair"
+if defence_2>=2000:
+    defence_2a=2
+    print "Defence Forces: Vigilant"
+elif defence_2<=1000:
+    defence_2a=0
+    print "Defence Forces: Lazy"
+else:
+    defence_2a=1
+    print "Defence Forces: Average"
+if compliance_2>=75:
+    compliance_2a=2
+    print "Compliance: Slavish"
+elif compliance_2<=65:
+    compliance_2a=0
+    print "Compliance: Rebellious"
+else:
+    compliance_2a=1
+    print "Compliance: Moderate"
+if economy_2>=66:
+    economy_2a=2
+    print "Economy: First World"
+elif economy_2<33:
+    economy_2a=0
+    print "Economy: Third World"
+else:
+    economy_2a=1
+    print "Economy: Second World"
+attack_4 = arms_2a + compliance_2a
+defence_4 = defence_2a + economy_2a
+print "Attack Value: " + str(attack_4)
+print "Defence Value: " + str(defence_4)
+
+if arms_1>arms_2:
+    print Nation_One + " is ridiculously overpowered compared to " + Nation_Two + "."
+elif arms_1<arms_2:
+    print Nation_Two + " is ridiculously overpowered compared to " + Nation_One + "."
+else:
+    print Nation_One + " and " + Nation_Two + " are evenly matched in weaponry."
+
+if defence_1>defence_2:
+    print Nation_Two + " could not penetrate the defences of " + Nation_One + " with a nuclear bomb."
+elif defence_1<defence_2:
+    print Nation_One + " could not penetrate the defences of " + Nation_One + " with a nuclear bomb."
+else:
+    print "Everything depends on what you can throw at one another; the two nations are evenly matched in defence..."
+
+if inftech_1>inftech_2:
+    print Nation_One + " has seen the big board in the " + Adjective_Two + " War Room."
+elif defence_1<defence_2:
+    print Nation_One + " has set up a permanent cocktail bar for " + Adjective_Two + " spies."
+else:
+    print "The spying game is evenly matched: be careful out there."
+
+print "STRIKE 1"
+import random
+for x in range(1):
+    x = random.randint(0,6)
+if x>=attack_3:
+    defence_4=defence_4-1
+    print "Successful " + Adjective_One + " attack!"
+else:
+    print "The best " + Adjective_One + " rocket fizzled out on takeoff."
+import random
+for y in range (1):
+    y = random.randint(0,6)
+if x<attack_3:
+    print Nation_Two + " laughs in scorn at the puny attack."
+else:
+    if y>defence_4:
+        defence_4=defence_4+1
+        print Nation_Two + " holds strong against the enemy!"
+        print Adjective_Two + " Defence Value: " + str(defence_4)
+    elif y==defence_4:
+        print Nation_Two + " survived that, but barely..."
+        print Adjective_Two + " Defence Value: " + str(defence_4)
+    else:
+        defence_4=defence_4-1
+        print Nation_Two + " is slowly falling under the onslaught."
+        print Adjective_Two + " Defence Value: " + str(defence_4)
+if defence_4 <= 0:
+    print Nation_Two + " has lost the battle and the war; " + Nation_One + " is victorious!"
+    if economy_1>economy_2:
+        print Nation_Two + " can be safely assumed to fall under the " + Nation_One + " sphere of influence..."
+    else:
+        print "Reparations and tribute are in order, are they not, " + Nation_Two + "?"
+else:
+    print "STRIKE 2"
+    import random
+    for x in range(1):
+        x = random.randint(0,6)
+    if x>=attack_4:
+        defence_3=defence_3-1
+        print "Successful attack by " + Adjective_Two + " attack!"
+    else:
+        print "The best " + Adjective_Two + " rocket fizzled out on takeoff."
+    import random
+    for y in range (1):
+        y = random.randint(0,6)
+    if x<attack_4:
+        print Nation_One + " laughs in scorn at the puny attack."
+    else:
+        if y>defence_3:
+            defence_3=defence_3+1
+            print Nation_One + " holds strong against the enemy!"
+            print Adjective_One + " Defence Value: " + str(defence_3)
+        elif y==defence_3:
+            print Nation_One + " survived that, but barely..."
+            print Adjective_One + " Defence Value: " + str(defence_3)
+        else:
+            defence_3=defence_3-1
+            print Nation_One + " is slowly falling under the onslaught."
+            print Adjective_One + " Defence Value: " + str(defence_3)
+    if defence_3 <= 0:
+        print Nation_One + " REALLY should not have started that war, seeing as they have to surrender..."
+        if economy_2>economy_1:
+            print Nation_One + " can be safely assumed to fall under the " + Nation_Two + " sphere of influence..."
+        else:
+            print "Reparations and tribute are in order, are they not, " + Nation_One + "?"
+    else:
+        print "STRIKE 3"
+        import random
+        for x in range(1):
+            x = random.randint(0,6)
+        if x>=attack_3:
+            defence_4=defence_4-1
+            print "Successful " + Adjective_One + " attack!"
+        else:
+            print "The best " + Adjective_One + " rocket fizzled out on takeoff."
+        import random
+        for y in range (1):
+            y = random.randint(0,6)
+        if x<attack_3:
+            print Nation_Two + " laughs in scorn at the puny attack."
+        else:
+            if y>defence_4:
+                defence_4=defence_4+1
+                print Nation_Two + " holds strong against the enemy!"
+                print Adjective_Two + " Defence Value: " + str(defence_4)
+            elif y==defence_4:
+                print Nation_Two + " survived that, but barely..."
+                print Adjective_Two + " Defence Value: " + str(defence_4)
+            else:
+                defence_4=defence_4-1
+                print Nation_Two + " is slowly falling under the onslaught."
+                print Adjective_Two + " Defence Value: " + str(defence_4)
+        if defence_4 <= 0:
+            print Nation_Two + " has lost the battle and the war; " + Nation_One + " is victorious!"
+            if economy_1>economy_2:
+                    print Nation_Two + " can be safely assumed to fall under the " + Adjective_One + " sphere of influence..."
+            else:
+                print "Reparations and tribute are in order, are they not, " + Nation_Two + "?"
+        else:
+            print "STRIKE 4"
+            import random
+            for x in range(1):
+                x = random.randint(0,6)
+            if x>=attack_4:
+                defence_3=defence_3-1
+                print "Successful " + Adjective_Two + " attack!"
+            else:
+                print "The best " + Adjective_Two + " rocket fizzled out on takeoff."
+            import random
+            for y in range (1):
+                y = random.randint(0,6)
+            if x<attack_4:
+                print Nation_One + " laughs in scorn at the puny attack."
+            else:
+                if y>defence_3:
+                    defence_3=defence_3+1
+                    print Nation_One + " holds strong against the enemy!"
+                    print Adjective_One + " Defence Value: " + str(defence_3)
+                elif y==defence_3:
+                    print Nation_One + " survived that, but barely..."
+                    print Adjective_One + " Defence Value: " + str(defence_3)
+                else:
+                    defence_3=defence_3-1
+                    print Nation_One + " is slowly falling under the onslaught."
+                    print Adjective_One + " Defence Value: " + str(defence_3)
+            if defence_3 <= 0:
+                print Nation_One + " REALLY should not have started that war; now they must surrender..."
+                if economy_2>economy_1:
+                    print Nation_One + " can be safely assumed to fall under the " + Adjective_Two + " sphere of influence..."
+                else:
+                    print "Reparations and tribute are in order, are they not, " + Nation_One + "?"
+            else:
+                print "STRIKE 5"
+                import random
+                for x in range(1):
+                    x = random.randint(0,6)
+                if x>=attack_3:
+                    defence_4=defence_4-1
+                    print "Successful " + Adjective_One + " attack!"
+                else:
+                    print "The best " + Adjective_One + " rocket fizzled out on takeoff."
+                import random
+                for y in range (1):
+                    y = random.randint(0,6)
+                if x<attack_3:
+                    print Nation_Two + " laughs in scorn at the puny attack."
+                else:
+                    if y>defence_4:
+                        defence_4=defence_4+1
+                        print Nation_Two + " holds strong against the enemy!"
+                        print Adjective_Two + " Defence Value: " + str(defence_4)
+                    elif y==defence_4:
+                        print Adjective_Two + " survived that, but barely..."
+                        print Nation_Two + " Defence Value: " + str(defence_4)
+                    else:
+                        defence_4=defence_4-1
+                        print Nation_Two + " is slowly falling under the onslaught."
+                        print Adjective_Two + " Defence Value: " + str(defence_4)
+                if defence_4 <= 0:
+                    print Nation_Two + " has lost the battle and the war; " + Nation_One + " is victorious!"
+                    if economy_1>economy_2:
+                        print Nation_Two + " can be safely assumed to fall under the " + Adjective_One + " sphere of influence..."
+                    else:
+                            print "Reparations and tribute are in order, are they not, " + Nation_Two + "?"
+                else:
+                        print "STRIKE 6"
+                        import random
+                        for x in range(1):
+                            x = random.randint(0,6)
+                        if x>=attack_4:
+                            defence_3=defence_3-1
+                            print "Successful " + Adjective_Two + " attack!"
+                        else:
+                            print "The best " + Adjective_Two + " rocket fizzled out on takeoff."
+                        import random
+                        for y in range (1):
+                            y = random.randint(0,6)
+                        if x<attack_4:
+                            print Nation_One + " laughs in scorn at the puny attack."
+                        else:
+                            if y>defence_3:
+                                defence_3=defence_3+1
+                                print Nation_One + " holds strong against the enemy!"
+                                print Nation_One + " Defence Value: " + str(defence_3)
+                            elif y==defence_3:
+                                print Nation_One + " survived that, but barely..."
+                                print Nation_One + " Defence Value: " + str(defence_3)
+                            else:
+                                defence_3=defence_3-1
+                                print Nation_One + " is slowly falling under the onslaught."
+                                print Nation_One + " Defence Value: " + str(defence_3)
+                        if defence_3 <= 0:
+                            print Nation_One + " REALLY should not have started that war; now they must surrender..."
+                            if economy_2>economy_1:
+                                print Nation_One + " can be safely assumed to fall under the " + Nation_Two + " sphere of influence..."
+                            else:
+                                print "Reparations and tribute are in order, are they not, " + Nation_One + "?"
+                        else:
+                            print "STRIKE 7"
+                            import random
+                            for x in range(1):
+                                x = random.randint(0,6)
+                            if x>=attack_3:
+                                defence_4=defence_4-1
+                                print "Successful " + Adjective_One + " attack!"
+                            else:
+                                print "The best " + Adjective_One + " rocket fizzled out on takeoff."
+                            import random
+                            for y in range (1):
+                                y = random.randint(0,6)
+                            if x<attack_3:
+                                print Nation_Two + " laughs in scorn at the puny attack."
+                            else:
+                                if y>defence_4:
+                                    defence_4=defence_4+1
+                                    print Nation_Two + " holds strong against the enemy!"
+                                    print Adjective_Two + " Defence Value: " + str(defence_4)
+                                elif y==defence_4:
+                                    print Nation_Two + " survived that, but barely..."
+                                    print Adjective_Two + " Defence Value: " + str(defence_4)
+                                else:
+                                    defence_4=defence_4-1
+                                    print Nation_Two + " is slowly falling under the onslaught."
+                                    print Adjective_Two + " Defence Value: " + str(defence_4)
+                            if defence_4 <= 0:
+                                print Nation_Two + " has lost the battle and the war; " + Nation_One + " is victorious!"
+                                if economy_1>economy_2:
+                                    print Nation_Two + " can be safely assumed to fall under the " + Nation_One + " sphere of influence..."
+                                else:
+                                    print "Reparations and tribute are in order, are they not, " + Nation_Two + "?"
+                            else:
+                                print "STRIKE 8"
+                                import random
+                                for x in range(1):
+                                    x = random.randint(0,6)
+                                if x>=attack_4:
+                                    defence_3=defence_3-1
+                                    print "Successful " + Adjective_Two + " attack!"
+                                else:
+                                    print "The best " + Adjective_Two + " rocket fizzled out on takeoff."
+                                import random
+                                for y in range (1):
+                                    y = random.randint(0,6)
+                                if x<attack_4:
+                                    print Nation_One + " laughs in scorn at the puny attack."
+                                else:
+                                    if y>defence_3:
+                                        defence_3=defence_3+1
+                                        print Nation_One + " holds strong against the enemy!"
+                                        print Adjective_One + " Defence Value: " + str(defence_3)
+                                    elif y==defence_3:
+                                        print Nation_One + " survived that, but barely..."
+                                        print Adjective_One + " Defence Value: " + str(defence_3)
+                                    else:
+                                        defence_3=defence_3-1
+                                        print Nation_One + " is slowly falling under the onslaught."
+                                        print Adjective_One + " Defence Value: " + str(defence_3)
+                                if defence_3 <= 0:
+                                    print Nation_One + " REALLY should not have started that war; now they must surrender..."
+                                    if economy_2>economy_1:
+                                        print Nation_One + " can be safely assumed to fall under the " + Adjective_Two + " sphere of influence..."
+                                    else:
+                                        print "Reparations and tribute are in order, are they not, " + Nation_One + "?"
+                                else:
+                                    print "STRIKE 9"
+                                    import random
+                                    for x in range(1):
+                                        x = random.randint(0,6)
+                                    if x>=attack_3:
+                                        defence_4=defence_4-1
+                                        print "Successful " + Adjective_One + " attack!"
+                                    else:
+                                        print "Your rocket fizzled out on takeoff."
+                                    import random
+                                    for y in range (1):
+                                        y = random.randint(0,6)
+                                    if x<attack_3:
+                                        print Nation_Two + " laughs in scorn at the puny attack."
+                                    else:
+                                        if y>defence_4:
+                                            defence_4=defence_4+1
+                                            print Nation_Two + " holds strong against the enemy!"
+                                            print Adjective_Two + " Defence Value: " + str(defence_4)
+                                        elif y==defence_4:
+                                            print Nation_Two + " survived that, but barely..."
+                                            print Adjective_Two + " Defence Value: " + str(defence_4)
+                                        else:
+                                            defence_4=defence_4-1
+                                            print Nation_Two + " is slowly falling under the onslaught."
+                                            print Adjective_Two + " Defence Value: " + str(defence_4)
+                                    if defence_4 <= 0:
+                                        print Nation_Two + " has lost the battle and the war; " + Nation_One + " is victorious!"
+                                        if economy_1>economy_2:
+                                            print Nation_Two + " can be safely assumed to fall under the " + Adjective_One + " sphere of influence..."
+                                        else:
+                                            print "Reparations and tribute are in order, are they not, " + Nation_Two + "?"
+                                    else:
+                                        print "STRIKE 10"
+                                        import random
+                                        for x in range(1):
+                                            x = random.randint(0,6)
+                                        if x>=attack_4:
+                                            defence_3=defence_3-1
+                                            print "Successful " + Adjective_Two + " attack!"
+                                        else:
+                                            print "The best " + Adjective_Two + " rocket fizzled out on takeoff."
+                                        import random
+                                        for y in range (1):
+                                            y = random.randint(0,6)
+                                        if x<attack_4:
+                                            print Nation_One + " laughs in scorn at the puny attack."
+                                        else:
+                                            if y>defence_3:
+                                                defence_3=defence_3+1
+                                                print Nation_One + " holds strong against the enemy!"
+                                                print Adjective_One + " Defence Value: " + str(defence_3)
+                                            elif y==defence_3:
+                                                print Nation_One + " survived that, but barely..."
+                                                print Adjective_One + " Defence Value: " + str(defence_3)
+                                            else:
+                                                defence_3=defence_3-1
+                                                print Adjective_One + " is slowly falling under the onslaught."
+                                                print Adjective_One + " Defence Value: " + str(defence_3)
+                                        if defence_3 <= 0:
+                                            print Nation_One + " REALLY should not have started that war; now they must surrender..."
+                                            if economy_2>economy_1:
+                                                print Nation_One + " can be safely assumed to fall under the " + Adjective_Two + " sphere of influence..."
+                                            else:
+                                                print "Reparations and tribute are in order, are they not, " + Nation_One + "?"
+                                        else:
+                                            print "STRIKE 11"
+                                            import random
+                                            for x in range(1):
+                                                x = random.randint(0,6)
+                                            if x>=attack_3:
+                                                defence_4=defence_4-1
+                                                print "Successful " + Adjective_One + " attack!"
+                                            else:
+                                                print "The best " + Adjective_One + " rocket fizzled out on takeoff."
+                                            import random
+                                            for y in range (1):
+                                                y = random.randint(0,6)
+                                            if x<attack_3:
+                                                print Nation_Two + " laughs in scorn at the puny attack."
+                                            else:
+                                                if y>defence_4:
+                                                    defence_4=defence_4+1
+                                                    print Nation_Two + " holds strong against the enemy!"
+                                                    print Adjective_Two + " Defence Value: " + str(defence_4)
+                                                elif y==defence_4:
+                                                    print Nation_Two + " survived that, but barely..."
+                                                    print Adjective_Two + " Defence Value: " + str(defence_4)
+                                                else:
+                                                    defence_4=defence_4-1
+                                                    print Nation_Two + " is slowly falling under the onslaught."
+                                                    print Adjective_Two + " Defence Value: " + str(defence_4)
+                                            if defence_4 <= 0:
+                                                print Nation_Two + " has lost the battle and the war; " + Nation_One + " is victorious!"
+                                                if economy_1>economy_2:
+                                                    print Nation_Two + " can be safely assumed to fall under the " + Adjective_One + " sphere of influence..."
+                                                else:
+                                                    print "Reparations and tribute are in order, are they not, " + Nation_Two + "?"
+                                            else:
+                                                print "STRIKE 12"
+                                                import random
+                                                for x in range(1):
+                                                    x = random.randint(0,6)
+                                                if x>=attack_4:
+                                                    defence_3=defence_3-1
+                                                    print "Successful " + Adjective_Two + " attack!"
+                                                else:
+                                                    print "The best " + Adjective_Two + " rocket fizzled out on takeoff."
+                                                import random
+                                                for y in range (1):
+                                                    y = random.randint(0,6)
+                                                if x<attack_4:
+                                                    print Nation_One + " laughs in scorn at the puny attack."
+                                                else:
+                                                    if y>defence_3:
+                                                        defence_3=defence_3+1
+                                                        print Nation_One + " holds strong against the enemy!"
+                                                        print Nation_One + " Defence Value: " + str(defence_3)
+                                                    elif y==defence_3:
+                                                        print Nation_One + " survived that, but barely..."
+                                                        print Adjective_One + " Defence Value: " + str(defence_3)
+                                                    else:
+                                                        defence_3=defence_3-1
+                                                        print Nation_One + " is slowly falling under the onslaught."
+                                                        print Nation_One + " Defence Value: " + str(defence_3)
+                                                if defence_3 <= 0:
+                                                    print Nation_One + " REALLY should not have started that war; now they must surrender..."
+                                                    if economy_2>economy_1:
+                                                        print Nation_One + " can be safely assumed to fall under the " + Adjective_Two + " sphere of influence..."
+                                                    else:
+                                                        print "Reparations and tribute are in order, are they not, " + Nation_One + "?"
+                                                else:
+                                                    if defence_3>defence_4:
+                                                        print "VICTORY for " + Nation_One + "!"
+                                                        if economy_1>economy_2:
+                                                            print Nation_Two + " can be safely assumed to fall under the " + Adjective_One + " sphere of influence..."
+                                                        else:
+                                                            print "Reparations and tribute are in order, are they not, " + Nation_Two + "?"
+                                                    elif defence_3<defence_4:
+                                                        print "VICTORY for " + Nation_Two + "!"
+                                                        if economy_2>economy_1:
+                                                            print Nation_One + " can be safely assumed to fall under the " + Adjective_Two + " sphere of influence..."
+                                                        else:
+                                                            print "Reparations and tribute are in order, are they not, " + Nation_One + "?"
+                                                    else:
+                                                        print "A draw! Looks like more diplomacy is needed..."
+                                                        if economy_1>economy_2:
+                                                            print "Perhaps " + Nation_One + " would be willing to help out?"
+                                                        elif economy_1<economy_2:
+                                                            print "Perhaps " + Nation_Two + " would be willing to help out?"
+                                                        else:
+                                                            print "Looks like these two idiots will have to clean up their own messes."
