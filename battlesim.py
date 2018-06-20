@@ -5,16 +5,17 @@ import random
 offensiveNationName = "Nandiguo"
 defensiveNationName = "Vittauria"
 strikeLimit = 12
+numSidedDie = 12
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 user_agent = {'user-agent': 'Python script for simulating roleplay battles, written by the nations of Usimbi and Vittauria'}
 http = urllib3.PoolManager(1, headers = user_agent)
 
 class nation:
-    economyBins = ((50, 75), ("Third world", "Second world", "First world"))
-    armsBins = ((7000, 14000), ("Poor", "Fair", "Industrious"))
-    complianceBins = ((50, 75), ("Rebellious", "Moderate", "Slavish"))
-    defenceBins = ((2000, 4000), ("Lazy", "Average", "Vigilant"))
+    economyBins = ((25, 50, 75), ("Basket Case", "Third world", "Second world", "First world"))
+    armsBins = ((4000, 8000, 12000, 16000), ("Poor", "Adequate", "Strong", "Industrious", "Schwarzeneggian"))
+    complianceBins = ((25, 50, 75), ("Rebellious", "Restless", "Disciplined", "Slavish"))
+    defenceBins = ((1000, 2000, 3000, 4000), ("Paper Thin", "Militia", "Conscripts", "Professional", "Elite"))
     
     def sortIntoBin(self, value, thresholds):
         for i in range(len(thresholds)):
@@ -102,8 +103,8 @@ if __name__ == "__main__":
             attacker = defensiveNation
             defender = offensiveNation
         
-        attackRoll = random.randint(0,5)
-        defenceRoll = random.randint(0,5)
+        attackRoll = random.randint(0, numSidedDie)
+        defenceRoll = random.randint(0, numSidedDie)
         
         if attackRoll < attacker.attackStat:
             print("Successful " + attacker.demonym + " attack!")
