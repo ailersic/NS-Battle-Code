@@ -137,7 +137,7 @@ if __name__ == "__main__":
             
             print(defender.demonym + " Defence Value: " + str(defender.defenceStat))
         else:
-            print("The best " + nation1.demonym + " rocket fizzled out on takeoff.")
+            print("The best " + attacker.demonym + " rocket fizzled out on takeoff.")
             
         strikeCounter = strikeCounter + 1
         print("")
